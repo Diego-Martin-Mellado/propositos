@@ -12,6 +12,109 @@
 			background: linear-gradient(172deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
 		}
 	</style>
+	<script type="text/javascript">
+		var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+		var propositos = [
+			// {
+			// 	title: '',
+			// 	description: '', 
+			// 	start: new Date (),
+			// 	end: new Date ()
+			// },
+			{
+				title: 'Ir al gimnasio',
+				description: 'Tengo que ir al gimnasio. Todos los días excepto 2 a la semana, preferiblemente miercoles, viernes o domingo, dos de ellos.',
+				start: new Date ('2022-01-03'),
+				end: new Date ('2022-07-01')
+			},
+			{
+				title: 'Leer un libro cada 2 meses',
+				description: 'Puedes aumentar la velocidad, de hecho es preferible que lo hagas. Podrías empezar con \'Padre rico, padre pobre\', luego deberías seguir con \'Inteligencia emocional\', luego planteate seguir con \'Secretos de la mente millonaria\', \'El código del dinero\', \'Piense y hágase rico\', \'El millonario de la puerta de al lado\' o \'El hombre más rico de Babilonia\'.', 
+				start: new Date ('2022-01-01'),
+				end: new Date ('2022-12-31')
+			},
+			{
+				title: 'Leer \'Padre rico, padre pobre\'',
+				description: '',
+				start: new Date ('2022-01-01'),
+				end: new Date ('2022-02-28')
+			}
+		]
+		window.onload = () => {
+			propositos.forEach ((proposito) => {
+				document.getElementById ('main').appendChild (get_html (proposito.title, proposito.description, proposito.start, proposito.end))
+			})
+		}
+		const get_html = (title, description, start, end) => {
+			// div principal
+			let return_obj = document.createElement ('div')
+			return_obj.setAttribute ('class', 'row border')
+
+			// primer col
+			let col1 = document.createElement ('div')
+			col1.setAttribute ('class', 'col p-4')
+			
+			// titulo
+			let titulo = document.createElement ('h1')
+			titulo.appendChild (document.createTextNode (title))
+			col1.appendChild (titulo)
+			
+			// descripcion
+			let descripcion = document.createElement ('div')
+			descripcion.setAttribute ('class', 'my-4')
+			descripcion.appendChild (document.createTextNode (description))
+			col1.appendChild (descripcion)
+			
+			let col2 = document.createElement ('div')
+			col2.setAttribute ('class', 'col p-4')
+
+			let icons = document.createElement ('span')
+			icons.setAttribute ('class', 'float-start mt-2 p-0 rounded w-100')
+
+			let icon_play = document.createElement ('i')
+			icon_play.setAttribute ('class', 'fa fa-play float-start')
+
+			let icon_stop = document.createElement ('i')
+			icon_stop.setAttribute ('class', 'fa fa-stop float-end')
+
+			icons.appendChild (icon_play)
+			icons.appendChild (icon_stop)
+			col2.appendChild (icons)
+
+			let bar = document.createElement ('span')
+			bar.setAttribute ('class', 'float-start my-2 p-0 gradient1 rounded w-100')
+
+			let dot1 = document.createElement ('span')
+			dot1.setAttribute ('class', 'float-start m-0 p-1 border border-dark rounded-circle bg-white')
+
+			let dot2 = document.createElement ('span')
+			dot2.setAttribute ('class', 'float-end m-0 p-1 border border-dark rounded-circle bg-white')
+
+			bar.appendChild (dot1)
+			bar.appendChild (dot2)
+			col2.appendChild (bar)
+
+			let dates = document.createElement ('span')
+			dates.setAttribute ('class', 'float-start mt-2 p-0 rounded w-100')
+
+			let date_start = document.createElement ('span')
+			date_start.setAttribute ('class', 'float-start m-0 p-0')
+			date_start.appendChild (document.createTextNode (`${start.getDate ()} de ${meses [start.getMonth ()]}`))
+			
+			let date_end = document.createElement ('span')
+			date_end.setAttribute ('class', 'float-end m-0 p-0')
+			date_end.appendChild (document.createTextNode (`${end.getDate ()} de ${meses [end.getMonth ()]}`))
+
+			dates.appendChild (date_start)
+			dates.appendChild (date_end)
+			col2.appendChild (dates)
+
+			return_obj.appendChild (col1)
+			return_obj.appendChild (col2)
+
+			return return_obj
+		}
+	</script>
 	<title>2022</title>
 </head>
 <body>
@@ -23,10 +126,10 @@
 			<i class="fa fa-reply"></i>
 		</a>
 	</nav>
-	<main class="container">
-		<div class="row border">
+	<main class="container" id="main">
+		<!-- <div class="row border">
 			<div class="col p-4">
-				Primer propósito
+				Plantilla
 			</div>
 			<div class="col p-4">
 				<span class="float-start mt-2 p-0 rounded w-100">
@@ -42,7 +145,7 @@
 					<span class="float-end m-0 p-0">23-feb</span>
 				</span>
 			</div>
-		</div>
+		</div> -->
 	</main>
 </body>
 </html>
