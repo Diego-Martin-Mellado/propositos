@@ -84,5 +84,13 @@ var database = {
 			start: new Date ('2022-11-01'),
 			end: new Date ('2022-12-31')
 		}
+	], 
+	'2023': [
+		{
+			title: 'Ir al gimnasio',
+			description: 'Tengo que ir al gimnasio. Todos los días excepto 2 a la semana, preferiblemente miercoles, viernes o domingo, dos de ellos.',
+			start: new Date ('2023-01-03'),
+			end: new Date ('2023-07-01')
+		}
 	]
 }
