@@ -1,0 +1,12 @@
+.gradient1 {
+	background: rgb(34,193,195);
+	background: linear-gradient(172deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+	background: -webkit-linear-gradient(172deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+	background: -moz-linear-gradient(172deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+	background: -ms-linear-gradient(172deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+	background: -o-linear-gradient(172deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
+
+.fs-7 {
+	font-size: 0.7rem;
+}
