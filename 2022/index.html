@@ -11,6 +11,10 @@
 			background: rgb(34,193,195);
 			background: linear-gradient(172deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
 		}
+
+		.fs-7 {
+			font-size: 0.7rem;
+		}
 	</style>
 	<script type="text/javascript">
 		var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
@@ -34,10 +38,46 @@
 				end: new Date ('2022-12-31')
 			},
 			{
+				title: 'Sacarse el -Postgrado de Inteligencia Artificial y Machine Learning-',
+				description: '<u>Ponte las pilas y echale huevos</u>, que está difícil, pero no imposible.<br><br>Sólo se trata de llevar todo al día, y siéntete satisfecho si lo has intentado, <span class="text-danger">¡Muchos ni siquiera lo intentan!</span>',
+				start: new Date ('2022-01-01'),
+				end: new Date ('2022-09-30')
+			},
+			{
 				title: 'Leer \'Padre rico, padre pobre\'',
 				description: '',
 				start: new Date ('2022-01-01'),
 				end: new Date ('2022-02-28')
+			},
+			{
+				title: 'Leer \'Inteligencia emocional\'',
+				description: '',
+				start: new Date ('2022-03-01'),
+				end: new Date ('2022-04-30')
+			},
+			{
+				title: 'Leer \'El hombre más rico de Babilonia\'',
+				description: '',
+				start: new Date ('2022-05-01'),
+				end: new Date ('2022-06-30')
+			},
+			{
+				title: 'Leer \'Secretos de una mente millonaria\'',
+				description: '',
+				start: new Date ('2022-07-01'),
+				end: new Date ('2022-08-31')
+			},
+			{
+				title: 'Leer \'El millonario de la puerta de al lado\'',
+				description: '',
+				start: new Date ('2022-09-01'),
+				end: new Date ('2022-10-31')
+			},
+			{
+				title: 'Leer \'Piense y hágase rico\'',
+				description: '',
+				start: new Date ('2022-11-01'),
+				end: new Date ('2022-12-31')
 			}
 		]
 		window.onload = () => {
@@ -45,6 +85,28 @@
 				document.getElementById ('main').appendChild (get_html (proposito.title, proposito.description, proposito.start, proposito.end))
 			})
 		}
+
+		const coming_soon_pill = () => {
+			let return_obj = document.createElement ('span')
+			return_obj.setAttribute ('class', 'py-0 px-2 fs-7 border border-info alert-info text-info rounded')
+			return_obj.appendChild (document.createTextNode ('¡Proximamente!'))
+			return return_obj
+		}
+
+		const completed_pill = () => {
+			let return_obj = document.createElement ('span')
+			return_obj.setAttribute ('class', 'py-0 px-2 fs-7 border border-success alert-success text-success rounded')
+			return_obj.appendChild (document.createTextNode ('¡Completada!'))
+			return return_obj
+		}
+
+		const in_proccess_pill = () => {
+			let return_obj = document.createElement ('span')
+			return_obj.setAttribute ('class', 'py-0 px-2 fs-7 border border-warning alert-warning text-warning rounded')
+			return_obj.appendChild (document.createTextNode ('En proceso'))
+			return return_obj
+		}
+
 		const get_html = (title, description, start, end) => {
 			// div principal
 			let return_obj = document.createElement ('div')
@@ -59,10 +121,20 @@
 			titulo.appendChild (document.createTextNode (title))
 			col1.appendChild (titulo)
 			
+			// Pill
+			let today = new Date ()
+			if (today < start) {
+				col1.appendChild (coming_soon_pill ())
+			} else if (today > end) {
+				col1.appendChild (completed_pill ())
+			} else {
+				col1.appendChild (in_proccess_pill ())
+			}
+
 			// descripcion
 			let descripcion = document.createElement ('div')
 			descripcion.setAttribute ('class', 'my-4')
-			descripcion.appendChild (document.createTextNode (description))
+			descripcion.innerHTML = description
 			col1.appendChild (descripcion)
 			
 			let col2 = document.createElement ('div')
