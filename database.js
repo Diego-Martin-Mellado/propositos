@@ -55,23 +55,41 @@ var database = {
 			end: new Date ('2022-02-28')
 		},
 		{
-			title: 'Leer \'Inteligencia emocional\'',
+			title: 'Leer \'El cuadrante del flujo del dinero\'',
 			description: '',
 			start: new Date ('2022-03-01'),
 			end: new Date ('2022-04-30')
 		},
+		// {
+		// 	title: 'Leer \'Inteligencia emocional\'',
+		// 	description: '',
+		// 	start: new Date ('2022-03-01'),
+		// 	end: new Date ('2022-04-30')
+		// },
+		// {
+		// 	title: 'Leer \'El hombre más rico de Babilonia\'',
+		// 	description: '',
+		// 	start: new Date ('2022-05-01'),
+		// 	end: new Date ('2022-06-30')
+		// },
 		{
-			title: 'Leer \'El hombre más rico de Babilonia\'',
+			title: 'Leer \'Guía para invertir\'',
 			description: '',
 			start: new Date ('2022-05-01'),
 			end: new Date ('2022-06-30')
 		},
 		{
-			title: 'Leer \'Secretos de una mente millonaria\'',
+			title: 'Leer \'Inteligencia emocional\'',
 			description: '',
 			start: new Date ('2022-07-01'),
 			end: new Date ('2022-08-31')
 		},
+		// {
+		// 	title: 'Leer \'Secretos de una mente millonaria\'',
+		// 	description: '',
+		// 	start: new Date ('2022-07-01'),
+		// 	end: new Date ('2022-08-31')
+		// },
 		{
 			title: 'Leer \'El millonario de la puerta de al lado\'',
 			description: '',
