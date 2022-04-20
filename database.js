@@ -10,7 +10,8 @@ var database = {
 			title: 'Sacarse el -Postgrado de Inteligencia Artificial y Machine Learning-',
 			description: '<u>Ponte las pilas y echale huevos</u>, que está difícil, pero no imposible.<br><br>Sólo se trata de llevar todo al día, y siéntete satisfecho si lo has intentado, ten en cuenta que has de apretar según se vaya acercando septiembre, por eso hay menos propósitos para entonces.<br><br><span class="text-danger">¡Muchos ni siquiera lo intentan!</span>',
 			start: new Date ('2022-01-01'),
-			end: new Date ('2022-09-30')
+			end: new Date ('2022-09-30'),
+			abandoned: true
 		},
 		{
 			title: 'Leer un libro cada 2 meses',

@@ -1,8 +1,15 @@
 var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
 window.onload = () => {
 	propositos.forEach ((proposito) => {
-		document.getElementById ('main').appendChild (get_html (proposito.title, proposito.description, proposito.start, proposito.end))
+		document.getElementById ('main').appendChild (get_html (proposito)) // .title, proposito.description, proposito.start, proposito.end
 	})
+}
+
+const not_completed_pill = () => {
+	let return_obj = document.createElement ('span')
+	return_obj.setAttribute ('class', 'py-0 px-2 fs-7 border border-danger alert-danger text-danger rounded')
+	return_obj.appendChild (document.createTextNode ('No completada o abandonada...'))
+	return return_obj
 }
 
 const coming_soon_pill = () => {
@@ -26,7 +33,11 @@ const in_proccess_pill = () => {
 	return return_obj
 }
 
-const get_html = (title, description, start, end) => {
+const get_html = (object) => {
+	let title = object.title
+	let description = object.description
+	let start = object.start
+	let end = object.end
 	// div principal
 	let return_obj = document.createElement ('div')
 	return_obj.setAttribute ('class', 'row border')
@@ -41,13 +52,18 @@ const get_html = (title, description, start, end) => {
 	col1.appendChild (titulo)
 	
 	// Pill
-	let today = new Date ()
-	if (today < start) {
-		col1.appendChild (coming_soon_pill ())
-	} else if (today > end) {
-		col1.appendChild (completed_pill ())
+	if (object.hasOwnProperty ('abandoned')) {
+		col1.appendChild (not_completed_pill ())
 	} else {
-		col1.appendChild (in_proccess_pill ())
+		let today = new Date ()
+		
+		if (today < start) {
+			col1.appendChild (coming_soon_pill ())
+		} else if (today > end) {
+			col1.appendChild (completed_pill ())
+		} else {
+			col1.appendChild (in_proccess_pill ())
+		}
 	}
 
 	// descripcion
