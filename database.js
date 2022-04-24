@@ -59,7 +59,8 @@ var database = {
 			title: 'Leer \'El cuadrante del flujo del dinero\'',
 			description: '',
 			start: new Date ('2022-03-01'),
-			end: new Date ('2022-04-30')
+			end: new Date ('2022-04-30'),
+			completed: true
 		},
 		// {
 		// 	title: 'Leer \'Inteligencia emocional\'',

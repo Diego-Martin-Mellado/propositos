@@ -55,14 +55,18 @@ const get_html = (object) => {
 	if (object.hasOwnProperty ('abandoned')) {
 		col1.appendChild (not_completed_pill ())
 	} else {
-		let today = new Date ()
-		
-		if (today < start) {
-			col1.appendChild (coming_soon_pill ())
-		} else if (today > end) {
+		if (object.hasOwnProperty ('completed')) {
 			col1.appendChild (completed_pill ())
 		} else {
-			col1.appendChild (in_proccess_pill ())
+			let today = new Date ()
+			
+			if (today < start) {
+				col1.appendChild (coming_soon_pill ())
+			} else if (today > end) {
+				col1.appendChild (completed_pill ())
+			} else {
+				col1.appendChild (in_proccess_pill ())
+			}
 		}
 	}
 
