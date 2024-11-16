@@ -117,27 +117,31 @@ var database = {
 	2025: [
 		{
 			title: "Objetivos en el gimnaio",
-			description: "Subir de peso corporal y mantenerlo entre 71kg y 74kg. En cuanto a ejercicios: 100kg en press banca y 200kg en hip thrust.",
+			description: `<p>Subir de peso corporal y mantenerlo en más de 73kg.</p>
+<ul>
+	<li><b>Hip thrust:</b> 250kg a final de enero, 270kg en marzo y 280kg en mayo.</li>
+	<li><b>Press banca:</b> 100kg asentados en fin de año, 110kg en febrero.</li>
+</ul>`,
 			start: new Date("2024-09-01"),
-			end: new Date("2025-03-21"),
+			end: new Date("2025-05-30"),
 		},
-		{
-			title: "Ir al gimnasio",
-			description: "Se trata principalmente de constancia, 3-4 días y junto con comer bien y descansar, ya verás que todo irá mejor. Intenta estar allí todos los días a las 21:00 ya cenado.",
-			start: new Date("2024-09-01"),
-			end: new Date("2025-07-01"),
-		},
-		{
-			title: "Programar con constancia en las aplicaciones de 73 apps",
-			description: "No hay un objetivo, pero piensalo como que tienes que sacar algo, siempre hay cosas interesantes que se pueden sacar, como un calendario, un chat, un gestor de archivos, un 'habit tracker', una aplicación de entrenamiento y probablemente muchas cosas más. Sólo tienes que seguir poco a poco. Otra idea chula podría ser aprender a hacer aplicaciones moviles y hacerlas también.",
-			start: new Date("2024-09-01"),
-			end: new Date("2025-07-01"),
-		},
-		{
-			title: "Leer el Diario Estoico y el Diario para Padres Estoicos",
-			description: "Éste hábito también trata únicamente de la constancia",
-			start: new Date("2024-09-01"),
-			end: new Date("2025-12-31"),
-		},
+		// {
+		// 	title: "Ir al gimnasio",
+		// 	description: "Se trata principalmente de constancia, 3-4 días y junto con comer bien y descansar, ya verás que todo irá mejor. Intenta estar allí todos los días a las 21:00 ya cenado.",
+		// 	start: new Date("2024-09-01"),
+		// 	end: new Date("2025-07-01"),
+		// },
+		// {
+		// 	title: "Programar con constancia en las aplicaciones de 73 apps",
+		// 	description: "No hay un objetivo, pero piensalo como que tienes que sacar algo, siempre hay cosas interesantes que se pueden sacar, como un calendario, un chat, un gestor de archivos, un 'habit tracker', una aplicación de entrenamiento y probablemente muchas cosas más. Sólo tienes que seguir poco a poco. Otra idea chula podría ser aprender a hacer aplicaciones moviles y hacerlas también.",
+		// 	start: new Date("2024-09-01"),
+		// 	end: new Date("2025-07-01"),
+		// },
+		// {
+		// 	title: "Leer el Diario Estoico y el Diario para Padres Estoicos",
+		// 	description: "Éste hábito también trata únicamente de la constancia",
+		// 	start: new Date("2024-09-01"),
+		// 	end: new Date("2025-12-31"),
+		// },
 	],
 }
